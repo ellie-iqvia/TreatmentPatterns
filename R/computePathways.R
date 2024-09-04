@@ -125,7 +125,7 @@ computePathways <- function(
     minEraDuration = minEraDuration
   )
   
-  checkCohortTable(andromeda)
+  #checkCohortTable(andromeda)
   
   andromeda$cohortTable <- andromeda$cohortTable %>%
     dplyr::rename_all(tolower) %>% 
