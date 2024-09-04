@@ -128,6 +128,7 @@ computePathways <- function(
   checkCohortTable(andromeda)
   
   andromeda$cohortTable <- andromeda$cohortTable %>%
+    dplyr::rename_all(tolower) %>% 
     dplyr::rename(
       cohortId = "cohort_definition_id",
       personId = "subject_id",
@@ -346,6 +347,7 @@ validateComputePathways <- function() {
 
 checkCohortTable = function(andromeda) {
   cohortTableHead <- andromeda[["cohortTable"]] %>%
+    dplyr::rename_all(tolower) %>% 
     head() %>%
     dplyr::collect()
   
