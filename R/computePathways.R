@@ -345,16 +345,16 @@ validateComputePathways <- function() {
   checkmate::reportAssertions(collection = assertCol)
 }
 
-checkCohortTable = function(andromeda) {
-  cohortTableHead <- andromeda[["cohortTable"]] %>%
-    dplyr::rename_all(tolower) %>% 
-    head() %>%
-    dplyr::collect()
-  
-  assertions <- checkmate::makeAssertCollection()
-  checkmate::assertIntegerish(cohortTableHead$cohort_definition_id, add = assertions)
-  checkmate::assertIntegerish(cohortTableHead$subject_id, add = assertions)
-  checkmate::assertDate(cohortTableHead$cohort_start_date, add = assertions)
-  checkmate::assertDate(cohortTableHead$cohort_end_date, add = assertions)
-  checkmate::reportAssertions(assertions)
-}
+# checkCohortTable = function(andromeda) {
+#   cohortTableHead <- andromeda[["cohortTable"]] %>%
+#     dplyr::rename_all(tolower) %>% 
+#     head() %>%
+#     dplyr::collect()
+#   
+#   assertions <- checkmate::makeAssertCollection()
+#   checkmate::assertIntegerish(cohortTableHead$cohort_definition_id, add = assertions)
+#   checkmate::assertIntegerish(cohortTableHead$subject_id, add = assertions)
+#   checkmate::assertDate(cohortTableHead$cohort_start_date, add = assertions)
+#   checkmate::assertDate(cohortTableHead$cohort_end_date, add = assertions)
+#   checkmate::reportAssertions(assertions)
+# }
